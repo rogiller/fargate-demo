@@ -31,3 +31,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+wrapper {
+    gradleVersion = "${project.gradleVersion}"
+    distributionType = Wrapper.DistributionType.ALL
+}
