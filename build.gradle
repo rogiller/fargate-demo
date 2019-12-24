@@ -1,5 +1,13 @@
+buildscript {
+    ext {
+        gradleVersion = '6.0.1'
+        groovyVersion = '2.5.8'
+        springBootVersion = '2.2.2.RELEASE'
+    }
+}
+
 plugins {
-    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'org.springframework.boot' version "$springBootVersion"
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'groovy'
 }
@@ -13,9 +21,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.codehaus.groovy:groovy'
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    implementation "org.codehaus.groovy:groovy:${groovyVersion}"
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 }
