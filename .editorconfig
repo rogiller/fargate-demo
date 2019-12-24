@@ -1,0 +1,14 @@
+# This config file allows for common "editor config" for a team and across IDE's.
+# See http://editorconfig.org for more info
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+
+[*.groovy]
+insert_final_newline = true
+trim_trailing_whitespace = true
