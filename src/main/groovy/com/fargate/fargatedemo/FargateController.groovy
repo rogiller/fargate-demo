@@ -30,8 +30,8 @@ class FargateController {
         //noinspection GrUnresolvedAccess
         mapResult.joke = jokeJson?.value?.joke as String
         mapResult.requestNumber = jokeRequestCount
-        mapResult.jvm = ManagementFactory.getRuntimeMXBean().getName()
-        mapResult.javaVersion = System.getProperty("java.version")
+        mapResult.jvmId = ManagementFactory.getRuntimeMXBean().getName()
+        mapResult.jvmVersion = System.getProperty("java.version")
 
         return mapResult
     }
