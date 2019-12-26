@@ -16,7 +16,7 @@ class FargateController {
     @GetMapping("")
     String fargateDemo(){
         String chuck = '<a href="/chuck">/chuck</a>'
-        return """<p>Hey there random internet person... you've stumbled upon Roger's Fargate Demo!
+        return """<p>HEY there random internet person... you've stumbled upon Roger's Fargate Demo!
                     Hit $chuck for a random Chuck Norris joke. I am not responsible for cleanness of the jokes. :)</p>
                """
     }
