@@ -3,6 +3,13 @@
 ### Overview
 This is a demo project to show the benefits of using a Docker container image as the deployment artifact.
 
+### Benefits of the "Container As Deployment Artifact"
+1) Everything you app needs is bundled... JDK upgrades, Java Library changes, code changes, and other environment pieces all ship as one.
+2) It's computing vendor independent. You can run your app anywhere where running containers is supported.
+3) Continuous deployment becomes as easy as publishing a new image.
+4) Auto scaling and keep your application running becomes the concern of the provider.
+5) You can focus on writing your application and get more sleep at night!
+
 ### How This Could Work in The Real World
 
 ##### Initial One Time Setup
