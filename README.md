@@ -1,7 +1,7 @@
 # just-run-containers-demo
 
 ### Overview
-This is a demo project to show the benefits of using a container (Docker) image as the deployment artifact.
+This is a demo project to show the benefits of using a Docker container image as the deployment artifact.
 
 ### How This Could Work in The Real World
 
