@@ -12,7 +12,7 @@ plugins {
     id 'groovy'
 }
 
-group = 'com.fargate'
+group = 'com.justrunit'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '8'
 //sourceCompatibility = '11'  //JDK11 baby!

@@ -2,8 +2,8 @@
 
 ./gradlew clean build
 
-docker build -t rogiller/fargate-demo .
+docker build -t rogiller/just-run-containers-demo .
 
-docker tag rogiller/fargate-demo rogiller/fargate-demo:latest
+docker tag rogiller/just-run-containers-demo rogiller/just-run-containers-demo:latest
 
-docker push rogiller/fargate-demo:latest
+docker push rogiller/just-run-containers-demo:latest

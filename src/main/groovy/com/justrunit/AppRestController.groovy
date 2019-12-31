@@ -17,9 +17,9 @@ class AppRestController {
     int jokeRequestCount = 0
 
     @GetMapping("")
-    String fargateDemo(){
+    String home(){
         String chuck = '<a href="/chuck">/chuck</a>'
-        return """<p>HEY there random internet person... you've stumbled upon Roger's Fargate Demo!
+        return """<p>HEY there random internet person... you've stumbled upon Roger's Container Demo!
                     Hit $chuck for a random Chuck Norris joke. I am not responsible for cleanness of the jokes. :)</p>
                """
     }
