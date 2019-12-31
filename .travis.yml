@@ -6,5 +6,5 @@ language: groovy
 jdk:
   - openjdk11
 
-script: ./push
+script: ./push.sh
 
