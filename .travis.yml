@@ -1,0 +1,10 @@
+dist: bionic
+sudo: required
+
+language: groovy
+
+jdk:
+  - openjdk11
+
+script: ./push
+
