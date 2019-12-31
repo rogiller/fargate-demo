@@ -17,19 +17,3 @@ ADD ${JAR_FILE} app.jar
 
 # Run the jar file
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-
-
-# Docker build commands
-
-# ./gradlew build
-# docker build -t rogiller/fargate-demo .
-# docker run -p 8080:8080 -t rogiller/fargate-demo
-
-
-# DockerHub stuff
-
-# Tagging
-# docker tag rogiller/fargate-demo rogiller/fargate-demo:latest
-
-# Pushing to DockerHub
-# docker push rogiller/fargate-demo:latest
