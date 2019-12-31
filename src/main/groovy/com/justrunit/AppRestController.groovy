@@ -40,6 +40,7 @@ class AppRestController {
         mapResult.jvmVersion = System.getProperty('java.version')
         mapResult.jvmVendor = ManagementFactory.getRuntimeMXBean().getVmVendor()
         mapResult.jvmUptime = getUptimeString(ManagementFactory.getRuntimeMXBean().getUptime())
+        mapResult.random = 'Containers are cool, yeah?!'
 
         return mapResult
     }
