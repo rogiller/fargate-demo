@@ -1,13 +1,13 @@
-package com.fargate.fargatedemo
+package com.justrunit
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class FargateDemoApplication {
+class Application {
 
 	static void main(String[] args) {
-		SpringApplication.run(FargateDemoApplication, args)
+		SpringApplication.run(Application, args)
 	}
 
 }

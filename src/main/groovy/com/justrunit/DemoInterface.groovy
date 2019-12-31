@@ -1,6 +1,6 @@
-package com.fargate.fargatedemo
+package com.justrunit
 
-interface FargateInterface {
+interface DemoInterface {
 
     //Using `default` keyword requires Groovy 3
     /*default*/ String fargate()

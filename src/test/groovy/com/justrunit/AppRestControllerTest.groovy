@@ -1,12 +1,12 @@
-package com.fargate.fargatedemo;
+package com.justrunit;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FargateControllerTest {
+class AppRestControllerTest {
 
-    FargateController tested = new FargateController();
+    AppRestController tested = new AppRestController();
 
     @Test
     void chuckNorrisJoke() {

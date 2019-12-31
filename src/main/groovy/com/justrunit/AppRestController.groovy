@@ -1,4 +1,4 @@
-package com.fargate.fargatedemo
+package com.justrunit
 
 import org.apache.commons.lang3.time.DurationFormatUtils
 import org.springframework.web.bind.annotation.GetMapping
@@ -10,7 +10,7 @@ import java.lang.management.ManagementFactory
 
 @RestController
 @RequestMapping("/")
-class FargateController {
+class AppRestController {
 
     static final String UPTIME_DURATION_FORMAT = "d' day, 'H' hour, 'm' min, 's' sec'"
 

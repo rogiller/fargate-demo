@@ -1,10 +1,10 @@
-package com.fargate.fargatedemo
+package com.justrunit
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class FargateDemoApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
