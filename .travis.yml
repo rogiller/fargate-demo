@@ -6,6 +6,9 @@ language: groovy
 jdk:
   - openjdk11
 
+services:
+  - docker
+
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - ./push.sh
