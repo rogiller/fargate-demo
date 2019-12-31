@@ -14,7 +14,8 @@ plugins {
 
 group = 'com.fargate'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'  //JDK11 baby!
+sourceCompatibility = '8'
+//sourceCompatibility = '11'  //JDK11 baby!
 
 repositories {
     mavenCentral()

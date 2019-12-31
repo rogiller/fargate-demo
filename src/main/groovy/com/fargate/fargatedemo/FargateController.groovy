@@ -37,7 +37,7 @@ class FargateController {
         mapResult.joke = jokeJson?.value?.joke as String
         mapResult.requestNumber = jokeRequestCount
         mapResult.jvmId = ManagementFactory.getRuntimeMXBean().getName()
-        mapResult.jvmVersion = ManagementFactory.getRuntimeMXBean().getVmVersion()
+        mapResult.jvmVersion = System.getProperty('java.version')
         mapResult.jvmVendor = ManagementFactory.getRuntimeMXBean().getVmVendor()
         mapResult.jvmUptime = getUptimeString(ManagementFactory.getRuntimeMXBean().getUptime())
 
