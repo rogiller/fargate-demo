@@ -1,5 +1,6 @@
 package com.fargate.fargatedemo
 
+import org.apache.commons.lang3.time.DurationFormatUtils
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -10,6 +11,8 @@ import java.lang.management.ManagementFactory
 @RestController
 @RequestMapping("/")
 class FargateController {
+
+    static final String UPTIME_DURATION_FORMAT = "d' day, 'H' hour, 'm' min, 's' sec'"
 
     int jokeRequestCount = 0
 
@@ -36,7 +39,12 @@ class FargateController {
         mapResult.jvmId = ManagementFactory.getRuntimeMXBean().getName()
         mapResult.jvmVersion = ManagementFactory.getRuntimeMXBean().getVmVersion()
         mapResult.jvmVendor = ManagementFactory.getRuntimeMXBean().getVmVendor()
+        mapResult.jvmUptime = getUptimeString(ManagementFactory.getRuntimeMXBean().getUptime())
 
         return mapResult
+    }
+
+    static String getUptimeString(long uptime) {
+        return DurationFormatUtils.formatDuration(uptime, UPTIME_DURATION_FORMAT)
     }
 }
