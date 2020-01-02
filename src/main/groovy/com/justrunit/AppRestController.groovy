@@ -33,18 +33,25 @@ class AppRestController {
         Map mapResult = [:]
 
         //noinspection GrUnresolvedAccess
+        mapResult.request = jokeRequestCount
         mapResult.joke = jokeJson?.value?.joke as String
-        mapResult.requestNumber = jokeRequestCount
         mapResult.jvmId = ManagementFactory.getRuntimeMXBean().getName()
         mapResult.jvmVersion = System.getProperty('java.version')
         mapResult.jvmVendor = ManagementFactory.getRuntimeMXBean().getVmVendor()
         mapResult.jvmUptime = getUptimeString(ManagementFactory.getRuntimeMXBean().getUptime())
+        mapResult.publicIP = getPublicIP()
         mapResult.random = 'abc'
 
         return mapResult
     }
 
-    static String getUptimeString(long uptime) {
+    @SuppressWarnings("GrMethodMayBeStatic")
+    String getUptimeString(long uptime) {
         return uptime.toString()
+    }
+
+    @SuppressWarnings("GrMethodMayBeStatic")
+    String getPublicIP(){
+        return new URL("http://checkip.amazonaws.com").text
     }
 }
