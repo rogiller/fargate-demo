@@ -37,6 +37,11 @@ Use the `push.sh` script to build and push the docker image to Docker Hub.
 
 This requires authentication to DockerHub.
 
+### References
+
+- https://start.spring.io
+- https://www.callicoder.com/spring-boot-docker-example/
+
 
 
 
