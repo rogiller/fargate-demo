@@ -41,6 +41,10 @@ This requires authentication to DockerHub.
 
 - https://start.spring.io
 - https://www.callicoder.com/spring-boot-docker-example/
+- https://flexrs.atlassian.net/wiki/spaces/DEV/pages/184188948/Flex5+Transitional+Architecture
+- https://portal.azure.com/#home
+- https://hub.docker.com/repositories
+- https://tools.keycdn.com/geo
 
 
 
