@@ -1,6 +1,5 @@
 package com.justrunit
 
-import org.apache.commons.lang3.time.DurationFormatUtils
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -40,12 +39,12 @@ class AppRestController {
         mapResult.jvmVersion = System.getProperty('java.version')
         mapResult.jvmVendor = ManagementFactory.getRuntimeMXBean().getVmVendor()
         mapResult.jvmUptime = getUptimeString(ManagementFactory.getRuntimeMXBean().getUptime())
-        mapResult.random = 'Containers are cool, yeah?!'
+        mapResult.random = 'abc'
 
         return mapResult
     }
 
     static String getUptimeString(long uptime) {
-        return DurationFormatUtils.formatDuration(uptime, UPTIME_DURATION_FORMAT)
+        return uptime.toString()
     }
 }
