@@ -36,7 +36,7 @@ class AppRestController {
 
         jokeRequestCount++
 
-        def jokeJson = new RestTemplate().getForObject('http://api.icndb.com/jokes/random', Object)
+        def jokeJson = new RestTemplate().getForObject('http://api.icndb.com/jokes/random?exclude=[explicit]', Object)
 
         Map mapResult = [:]
 
@@ -48,7 +48,7 @@ class AppRestController {
         mapResult.jvmVendor = ManagementFactory.getRuntimeMXBean().getVmVendor()
         mapResult.jvmUptime = getUptimeString(ManagementFactory.getRuntimeMXBean().getUptime())
         mapResult.publicIP = getPublicIP()
-        mapResult.randomText = '3:20PM'
+        mapResult.randomText = 'Jan 2, 2020 4:37PM'
 
         return mapResult
     }
