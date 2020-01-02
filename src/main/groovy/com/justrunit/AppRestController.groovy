@@ -49,7 +49,7 @@ class AppRestController {
         mapResult.jvmVendor = ManagementFactory.getRuntimeMXBean().getVmVendor()
         mapResult.jvmUptime = getUptimeString(ManagementFactory.getRuntimeMXBean().getUptime())
         mapResult.publicIP = getPublicIP()
-        mapResult.randomText = 'demo1'
+        mapResult.randomText = '2:44PM'
 
         return mapResult
     }
