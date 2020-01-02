@@ -1,5 +1,6 @@
 package com.justrunit
 
+import groovy.transform.Memoized
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -13,6 +14,7 @@ import java.sql.Statement
 
 @RestController
 @RequestMapping("/")
+@SuppressWarnings("GrMethodMayBeStatic")
 class AppRestController {
 
     static final String UPTIME_DURATION_FORMAT = "d' day, 'H' hour, 'm' min, 's' sec'"
@@ -54,10 +56,7 @@ class AppRestController {
 
         List<Map> mapResult = []
 
-        String url = "jdbc:mysql://container-demo-mysql.mysql.database.azure.com:3306/sakila?useSSL=true&requireSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
-        Connection con = DriverManager.getConnection(url, "demo@container-demo-mysql", "33V0wpG5zm");
-
-        Statement stmt = con.createStatement();
+        Statement stmt = getDatabaseConnection().createStatement();
         ResultSet rs = stmt.executeQuery("select * from actor");
 
         while (rs.next()) {
@@ -68,19 +67,24 @@ class AppRestController {
             mapResult << map
         }
 
-        con.close();
-
         return mapResult
     }
 
-    @SuppressWarnings("GrMethodMayBeStatic")
     String getUptimeString(long uptime) {
         return uptime.toString()
     }
 
-    @SuppressWarnings("GrMethodMayBeStatic")
     String getPublicIP(){
         return new URL("http://checkip.amazonaws.com").text?.replace("\n", "")
+    }
+
+    //yes, it's really bad to memoize a connection, but this is a demo.
+    @Memoized
+    Connection getDatabaseConnection(){
+        String url = "jdbc:mysql://container-demo-mysql.mysql.database.azure.com:3306/sakila?useSSL=true&requireSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
+        System.out.println("Creating database connection: $url")
+        Connection con = DriverManager.getConnection(url, "demo@container-demo-mysql", "33V0wpG5zm");
+        return con
     }
 
 }
