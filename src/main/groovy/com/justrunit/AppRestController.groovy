@@ -21,6 +21,9 @@ class AppRestController {
 
     int jokeRequestCount = 0
 
+    //yes, it's really bad to have a connection as variable, but this is a demo. :)
+    Connection connection
+
     @GetMapping("")
     String home(){
         String chuck = '<a href="/chuck">/chuck</a>'
@@ -78,13 +81,17 @@ class AppRestController {
         return new URL("http://checkip.amazonaws.com").text?.replace("\n", "")
     }
 
-    //yes, it's really bad to memoize a connection, but this is a demo. :)
-    @Memoized
     Connection getDatabaseConnection(){
+
+        if(connection && connection.isValid(3)){
+            return connection
+        }
+
         String url = "jdbc:mysql://container-demo-mysql.mysql.database.azure.com:3306/sakila?useSSL=true&requireSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
         System.out.println("Creating database connection: $url")
-        Connection con = DriverManager.getConnection(url, "demo@container-demo-mysql", "33V0wpG5zm");
-        return con
+        connection = DriverManager.getConnection(url, "demo@container-demo-mysql", "33V0wpG5zm");
+
+        return connection
     }
 
 }
