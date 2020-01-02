@@ -1,6 +1,7 @@
 # Set "base" Docker image
 FROM amazoncorretto:8u232
 
+#Just information
 LABEL maintainer="rogerdiller@gmail.com"
 
 VOLUME /tmp
