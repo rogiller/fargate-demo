@@ -23,6 +23,7 @@ repositories {
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
     implementation "org.codehaus.groovy:groovy:${groovyVersion}"
+    implementation "mysql:mysql-connector-java:8.0.18"
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
