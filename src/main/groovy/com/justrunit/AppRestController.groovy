@@ -41,7 +41,7 @@ class AppRestController {
 
         jokeRequestCount++
 
-        def jokeJson = new RestTemplate().getForObject('http://api.icndb.com/jokes/random?exclude=[explicit]', Object)
+        def jokeJson = new RestTemplate().getForObject('http://api.icndb.com/jokes/random?limitTo=[nerdy]', Object)
 
         Map mapResult = [:]
 
