@@ -78,7 +78,7 @@ class AppRestController {
         return new URL("http://checkip.amazonaws.com").text?.replace("\n", "")
     }
 
-    //yes, it's really bad to memoize a connection, but this is a demo.
+    //yes, it's really bad to memoize a connection, but this is a demo. :)
     @Memoized
     Connection getDatabaseConnection(){
         String url = "jdbc:mysql://container-demo-mysql.mysql.database.azure.com:3306/sakila?useSSL=true&requireSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false";
