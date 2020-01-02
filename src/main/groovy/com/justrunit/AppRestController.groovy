@@ -52,6 +52,6 @@ class AppRestController {
 
     @SuppressWarnings("GrMethodMayBeStatic")
     String getPublicIP(){
-        return new URL("http://checkip.amazonaws.com").text
+        return new URL("http://checkip.amazonaws.com").text?.replace("\n", "")
     }
 }
