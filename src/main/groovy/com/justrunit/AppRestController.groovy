@@ -21,7 +21,7 @@ class AppRestController {
 
     int jokeRequestCount = 0
 
-    //yes, it's really bad to have a connection as variable, but this is a demo. :)
+    //yes, it's really bad to have a connection as a instance variable, but this is a demo. :)
     Connection connection
 
     @GetMapping("")
