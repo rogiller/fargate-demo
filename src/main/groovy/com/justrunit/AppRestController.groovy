@@ -26,8 +26,13 @@ class AppRestController {
     @GetMapping("")
     String home(){
         String chuck = '<a href="/chuck">/chuck</a>'
-        return """<p>HEY there random internet person... you've stumbled upon Roger's Container Demo!
-                    Hit $chuck for a random Chuck Norris joke. I am not responsible for cleanness of the jokes. :)</p>
+        String actors = '<a href="/actors">/actors</a>'
+        return """<p>Hi there random internet person! You've stumbled upon Roger's Container Demo!</p>
+                  <p>Things you can do here:</p>
+                  <ul>
+                      <li>Go to $chuck for a random Chuck Norris joke</li>
+                      <li>Go to $actors to fetch a list of actors from a remote MySQL database</li>
+                  </ul>
                """
     }
 
