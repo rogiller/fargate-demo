@@ -1,5 +1,5 @@
 # Set "base" Docker image
-FROM amazoncorretto:8u232
+FROM amazoncorretto:11.0.5
 
 # Just information
 LABEL maintainer="rogerdiller@gmail.com"
