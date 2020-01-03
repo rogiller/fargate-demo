@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
 
 import java.lang.management.ManagementFactory
+import java.math.RoundingMode
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.ResultSet
@@ -19,6 +20,7 @@ class AppRestController {
     static final String UPTIME_DURATION_FORMAT = "d' day, 'H' hour, 'm' min, 's' sec'"
 
     int jokeRequestCount = 0
+    int jvmId = new BigDecimal(Math.random()).movePointRight(3).setScale(0, RoundingMode.HALF_EVEN).toInteger()
 
     //yes, it's really bad to have a connection as a instance variable, but this is a demo. :)
     Connection connection
@@ -48,7 +50,8 @@ class AppRestController {
         //noinspection GrUnresolvedAccess
         mapResult.request = jokeRequestCount
         mapResult.joke = jokeJson?.value?.joke as String
-        mapResult.jvmId = ManagementFactory.getRuntimeMXBean().getName()
+        mapResult.jvmId = jvmId
+        mapResult.jvmName = ManagementFactory.getRuntimeMXBean().getName()
         mapResult.jvmVersion = System.getProperty('java.version')
         mapResult.jvmVendor = ManagementFactory.getRuntimeMXBean().getVmVendor()
         mapResult.jvmUptime = getUptimeString(ManagementFactory.getRuntimeMXBean().getUptime())
